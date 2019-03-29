@@ -15,26 +15,29 @@ fi
 # creates symbol link $1 -> $2 iff $2 doesnt exists
 ln_if () {
   if [ ! -f "$2" ]; then
-    ln -s $1 $2
+    ln -s "$1" "$2"
   fi
 }
 
-ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global || echo ".gitignore_global already exists"
-ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc || echo ".zshrc already exists"
+ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
+ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+
 
 mkdir -p "$HOME/Library/Application Support/Code/User"
 ln_if $HOME/.dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
-# ln -s $HOME/.dotfiles/vscode/keybindings.json \
-# 	  "$vscode_path/User/keybindings.json"
+ln_if $HOME/.dotfiles/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
 
 
 # Update Homebrew
 brew bundle --file=brewfile
 
+# Install nvm if it doesnt exists
+if [ ! -d "$HOME/.nvm" ]; then
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+fi
+
 # Install oh-my-zsh if it doesnt exists
-if [ -d "$HOME/.oh-my-zsh" ]; then
-  echo "oh-my-zsh already installed"
-else
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
   chsh -s $(grep /zsh$ /etc/shells | tail -1)
 fi
