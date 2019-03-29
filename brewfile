@@ -1,0 +1,13 @@
+brew "git"
+brew "openssl"
+brew "wget"
+brew "vim"
+brew "zsh"
+
+cask "iterm2"
+cask "firefox"
+cask "google-chrome"
+cask "visual-studio-code"
+cask "spotify"
+cask "slack"
+cask "spectacle"

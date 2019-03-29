@@ -1,0 +1,79 @@
+##############
+# Minimalism #
+##############
+
+# Dark menu bar and dock
+defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
+# Group windows by application in Mission Control
+defaults write com.apple.dock expose-group-by-app -bool true
+
+# no desktop - nothing to clean up :D
+defaults write com.apple.finder CreateDesktop -bool false
+
+# hide dock
+defaults write com.apple.dock autohide -bool true
+
+# hide menu bar (show on hover)
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Don't show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Disable window animations and Get Info animations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# Remove the auto-hiding Dock delay
+defaults write com.apple.dock autohide-delay -float 0
+
+# Remove the animation when hiding/showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Don't animate opening applications from the Dock
+defaults write com.apple.dock launchanim -bool false
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+
+##########
+# Finder #
+##########
+
+# show path bar (bottom bar with full path)
+defaults write com.apple.finder ShowPathbar -bool true
+
+# disable warning when changing file ext
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Use list view in all Finder windows by default
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Show the ~/Library folder
+chflags nohidden $HOME/Library
+
+#######################################
+# !! RESTART SYSTEM TO TAKE EFFECT !! #
+#######################################
+
+killall Finder; killall Dock; killall SystemUIServer
