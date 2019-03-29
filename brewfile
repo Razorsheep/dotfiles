@@ -3,6 +3,7 @@ brew "openssl"
 brew "wget"
 brew "vim"
 brew "zsh"
+brew "tldr"
 
 cask "iterm2"
 cask "firefox"
