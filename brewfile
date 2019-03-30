@@ -1,3 +1,4 @@
+# general tools
 brew "git"
 brew "openssl"
 brew "wget"
@@ -5,11 +6,17 @@ brew "vim"
 brew "zsh"
 brew "tldr"
 
+# development
 cask "iterm2"
+cask "visual-studio-code"
+
+# browser
 cask "firefox"
 cask "google-chrome"
-cask "visual-studio-code"
+
+# misc
 cask "spotify"
 cask "slack"
 cask "spectacle"
 cask "1password"
+
