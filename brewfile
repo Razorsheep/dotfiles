@@ -20,3 +20,7 @@ cask "slack"
 cask "spectacle"
 cask "1password"
 
+# fonts
+tap "caskroom/fonts"
+cask "font-fira-code"
+
