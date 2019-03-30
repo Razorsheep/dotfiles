@@ -21,7 +21,7 @@ ln_if () {
 
 ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
 ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
-
+ln_if $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 
 mkdir -p "$HOME/Library/Application Support/Code/User"
 ln_if $HOME/.dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
