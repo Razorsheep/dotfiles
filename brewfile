@@ -5,6 +5,7 @@ brew "wget"
 brew "vim"
 brew "zsh"
 brew "tldr"
+brew "the_silver_searcher"
 
 # development
 cask "iterm2"
