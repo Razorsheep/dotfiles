@@ -36,6 +36,11 @@ if [ ! -d "$HOME/.nvm" ]; then
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 fi
 
+# set iterm2 config
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string $HOME/.dotfiles/iterm2
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+
 # Install oh-my-zsh if it doesnt exists
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
