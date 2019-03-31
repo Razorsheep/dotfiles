@@ -23,6 +23,7 @@ ln_if () {
 
 echo "Setting up symbolic links"; echo;
 ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
+ln_if $HOME/.dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
 ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 ln_if $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 
@@ -96,3 +97,4 @@ echo "Updating macOS preferences and settings..."; echo;
 source .macos
 
 echo -e "\033[1;92mDone!\033[0m"
+echo "Close and open your terminal again, or source \$HOME/.zshrc"; echo;
