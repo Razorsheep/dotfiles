@@ -23,6 +23,7 @@ cask "slack"
 cask "spectacle"
 cask "1password"
 cask "alfred"
+cask "dropbox"
 
 # fonts
 tap "caskroom/fonts"
