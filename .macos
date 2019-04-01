@@ -132,6 +132,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Finder #
 ##########
 
+# Set ~ as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+# For destkop, use `PfDe` and `file://${HOME}/Desktop`
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
