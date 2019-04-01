@@ -100,6 +100,16 @@ else
   git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh &> /dev/null
 fi
 
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+if [ -d "$ZSH_CUSTOM/themes/spaceship-prompt" ]; then
+  put_info "Spaceship ZSH theme already installed..."
+else
+  put_info "Installing Spaceship ZSH theme..."
+  git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" &> /dev/null
+  ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+fi
+
+
 # change shell to zsh if it isnt already
 TEST_CURRENT_SHELL=$(basename "$SHELL")
 if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
