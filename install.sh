@@ -129,7 +129,7 @@ put_success "NVM and latest Node LTS has been installed"
 
 # macos stuff
 put_header "macOS"
-put_step "Updating macOS preferences and settings..."; echo;
+put_step "Updating macOS preferences and settings (this might ask for password)..."; echo;
 source .macos
 put_success "macOS settings updated"
 
