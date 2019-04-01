@@ -7,9 +7,11 @@ brew "zsh"
 brew "tldr"
 brew "the_silver_searcher"
 
+
 # development
 cask "iterm2"
 cask "visual-studio-code"
+cask "docker"
 
 # browser
 cask "firefox"
