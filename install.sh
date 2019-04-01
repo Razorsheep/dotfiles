@@ -48,6 +48,8 @@ ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
 ln_if $HOME/.dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
 ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 ln_if $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
+ln_if $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
+ln_if $HOME/.dotfiles/tmux.conf.local $HOME/.tmux.conf.local
 
 mkdir -p "$HOME/Library/Application Support/Code/User"
 ln_if $HOME/.dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
