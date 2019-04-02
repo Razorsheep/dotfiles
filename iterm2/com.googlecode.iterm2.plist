@@ -56,14 +56,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>799 310 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 146 918 512 0 0 1440 900 </string>
+	<string>269 85 796 486 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 227 914 673 0 0 1440 900 </string>
+	<string>0 398 650 502 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>176 75 570 452 0 0 1440 900 </string>
+	<string>437 183 650 452 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>197 47 570 452 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -630,11 +630,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>FiraCode-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 14</string>
+			<string>IBMPlexMono 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -688,7 +688,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -699,16 +699,16 @@
 			<string>/Users/pra</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>488561BE-A316-4B6B-8F00-5CBA5A6D0CF7</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<string>5CA8DDC3-B096-4F58-9806-5C0FC11D0559</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>575572360.12828302</real>
+	<real>568816483.32319701</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -743,22 +743,20 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/pra/.dotfiles/iterm2</string>
+	<string>/Users/praffn/.dotfiles/iterm2</string>
 	<key>SUEnableAutomaticChecks</key>
-	<true/>
+	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=28</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=45</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
-	<key>SULastCheckTime</key>
-	<date>2019-03-31T10:08:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.8</string>
+	<string>3.2.6</string>
 </dict>
 </plist>

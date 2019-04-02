@@ -27,5 +27,5 @@ cask "dropbox"
 
 # fonts
 tap "caskroom/fonts"
+cask "font-ibm-plex"
 cask "font-fira-code"
-
