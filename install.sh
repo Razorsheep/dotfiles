@@ -168,12 +168,14 @@ put_info "https://github.com/amix/vimrc"
 if [ -d "$HOME/.vim_runtime" ]; then
   put_info "The Ultimate vimrc is already installed... Updating..."
   (cd $HOME/.vim_runtime && git pull --rebase) &> /dev/null
+  ln_if $HOME/.dotfiles/vim/my_configs.vim $HOME/.vim_runtime/my_configs.vim
   put_success "The Ultimate vimrc was updated!"
 else
   put_step "Installing The Ultimate vimrc..."
   # get that good stuff
   git clone --depth=1 https://github.com/amix/vimrc.git $HOME/.vim_runtime &> /dev/null
   # link custom vimrc into my_configs.vim
+  ln -s $HOME/.dotfiles/vim/my_configs.vim $HOME/.vim_runtime/my_configs.vim
   # install it
   sh $HOME/.vim_runtime/install_awesome_vimrc.sh &> /dev/null
   put_success "The Ultimate vimrc was successfully installed!"
