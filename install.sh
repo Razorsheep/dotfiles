@@ -1,5 +1,24 @@
 #!/bin/bash
 
+FLAG_UPDATE_BREW=true
+FLAG_MACOS_PREF=true
+
+while test $# -gt 0; do
+  case "$1" in
+    --no-brew-update|-nb)
+      shift
+      FLAG_UPDATE_BREW=false
+      ;;
+    --no-macos-preferences|-nm)
+      shift
+      FLAG_MACOS_PREF=false
+      ;;
+    *)
+      echo "Uknown option '$1'"
+      shift
+      ;;
+  esac
+done
 
 bold=$(tput bold)
 green=$(tput setaf 76)
@@ -80,9 +99,13 @@ else
   put_info "Homebrew is already installed...";
 fi
 
-put_step "Updating and upgrading Homebrew...";
-yes | brew update &> /dev/null
-yes | brew upgrade &> /dev/null
+if $FLAG_UPDATE_BREW; then
+  put_step "Updating and upgrading Homebrew...";
+  yes | brew update &> /dev/null
+  yes | brew upgrade &> /dev/null
+else
+  put_info "Skipping Homebrew update/upgrade...";
+fi
 
 put_step "Installing Homebrew packages...";
 yes | brew bundle --file=brewfile &> /dev/null || true
@@ -141,9 +164,13 @@ put_success "NVM and latest Node LTS has been installed"
 
 # macos stuff
 put_header "macOS"
-put_step "Updating macOS preferences and settings (this might ask for password)..."; echo;
-source .macos
-put_success "macOS settings updated"
+if $FLAG_MACOS_PREF; then
+  put_step "Updating macOS preferences and settings (this might ask for password)..."; echo;
+  source .macos
+  put_success "macOS settings updated"
+else
+  put_info "Skipping updating macOS preferences..."
+fi
 
 printf "${bold}
             .     '     ,
