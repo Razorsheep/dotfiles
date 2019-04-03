@@ -103,14 +103,13 @@ if $FLAG_UPDATE_BREW; then
   put_step "Updating and upgrading Homebrew...";
   yes | brew update &> /dev/null
   yes | brew upgrade &> /dev/null
+  put_step "Installing Homebrew packages...";
+  yes | brew bundle --file=brewfile &> /dev/null || true
+  put_success "Homebrew installed, updated and upgraded"
 else
   put_info "Skipping Homebrew update/upgrade...";
 fi
 
-put_step "Installing Homebrew packages...";
-yes | brew bundle --file=brewfile &> /dev/null || true
-
-put_success "Homebrew installed, updated and upgraded"
 
 # ZSH and oh-my-sh
 put_header "ZSH and oh-my-zsh"
