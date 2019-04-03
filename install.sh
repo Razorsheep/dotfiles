@@ -67,7 +67,6 @@ touch $HOME/.zsh-env
 ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
 ln_if $HOME/.dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
 ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
-ln_if $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 ln_if $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
 ln_if $HOME/.dotfiles/tmux.conf.local $HOME/.tmux.conf.local
 
@@ -162,6 +161,25 @@ put_step "Installing latest Node LTS via NVM..."
 nvm install --lts &> /dev/null
 
 put_success "NVM and latest Node LTS has been installed"
+
+# The Ultimate vimrc
+put_header "The Ultimate vimrc"
+put_info "https://github.com/amix/vimrc"
+
+if [ -d "$HOME/.vim_runtime" ]; then
+  put_info "The Ultimate vimrc is already installed... Updating..."
+  (cd $HOME/.vim_runtime && git pull --rebase) &> /dev/null
+  put_success "The Ultimate vimrc was updated!"
+else
+  put_step "Installing The Ultimate vimrc..."
+  # get that good stuff
+  git clone --depth=1 https://github.com/amix/vimrc.git $HOME/.vim_runtime &> /dev/null
+  # link custom vimrc into my_configs.vim
+  # install it
+  sh $HOME/.vim_runtime/install_awesome_vimrc.sh &> /dev/null
+  put_success "The Ultimate vimrc was successfully installed!"
+fi
+
 
 # macos stuff
 put_header "macOS"
