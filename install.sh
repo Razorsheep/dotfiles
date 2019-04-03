@@ -63,6 +63,7 @@ ln_if () {
 # symlinks
 
 put_step "Setting up symbolic links"
+touch $HOME/.zsh-env
 ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
 ln_if $HOME/.dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
 ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc

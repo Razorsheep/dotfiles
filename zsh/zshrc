@@ -4,6 +4,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # aliases
 source $HOME/.zsh-aliases
 
+# env
+source $HOME/.zsh-env
+
 # zsh theme
 ZSH_THEME="spaceship"
 
