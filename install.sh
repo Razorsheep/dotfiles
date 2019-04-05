@@ -161,6 +161,19 @@ nvm install --lts &> /dev/null
 
 put_success "NVM and latest Node LTS has been installed"
 
+# Yarn Package Manager
+put_header "Yarn"
+
+if [ -d "$HOME/.yarn" ]; then
+  put_step "Yarn already installed. Updating..."
+else
+  put_step "Installing Yarn..."
+fi
+
+curl -o- -L https://yarnpkg.com/install.sh 2> /dev/null | bash &> /dev/null
+
+put_success "Yarn was successfully installed/updated!"
+
 # The Ultimate vimrc
 put_header "The Ultimate vimrc"
 put_info "https://github.com/amix/vimrc"
