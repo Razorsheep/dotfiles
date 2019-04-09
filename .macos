@@ -170,6 +170,12 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
 
+########
+# Dock #
+########
+
+defaults write com.apple.dock show-recents -bool FALSE
+
 
 #######################################
 # !! RESTART SYSTEM TO TAKE EFFECT !! #
