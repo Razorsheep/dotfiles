@@ -2,6 +2,7 @@
   "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 14,
-  "editor.fontLigatures": true
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true
 }

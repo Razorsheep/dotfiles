@@ -56,14 +56,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>799 310 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 85 796 486 0 0 1440 900 </string>
+	<string>-1171 -87 918 512 -1440 -179 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 398 650 502 0 0 1440 900 </string>
+	<string>-1440 -179 1440 900 -1440 -179 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>437 183 650 452 0 0 1440 900 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>197 47 570 452 0 0 2560 1417 </string>
+	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -298,7 +298,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -699,16 +699,18 @@
 			<string>/Users/pra</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveRequestedFullDiskAccess</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>5CA8DDC3-B096-4F58-9806-5C0FC11D0559</string>
+	<string>488561BE-A316-4B6B-8F00-5CBA5A6D0CF7</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>568816483.32319701</real>
+	<real>575572360.12828302</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -743,20 +745,22 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/praffn/.dotfiles/iterm2</string>
+	<string>/Users/pra/.dotfiles/iterm2</string>
 	<key>SUEnableAutomaticChecks</key>
-	<false/>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=45</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=28</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2019-04-05T15:26:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.8</string>
 </dict>
 </plist>
