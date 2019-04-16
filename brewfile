@@ -6,6 +6,7 @@ brew "vim"
 brew "zsh"
 brew "tldr"
 brew "the_silver_searcher"
+brew "ripgrep"
 brew "bat"
 
 

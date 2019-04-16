@@ -4,5 +4,6 @@
   "editor.fontFamily": "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
+  "window.zoomLevel": 0,
   "editor.formatOnSave": true
 }
