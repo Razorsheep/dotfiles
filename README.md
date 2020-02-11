@@ -1,9 +1,7 @@
-# .dotfiles
+# dotfiles
 
-> The install script assumes it is run using macOS and that it is installed in `$HOME/.dotfiles`
-
-To clone and install:
+(`.macos` is heavily inspired by [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles))
 
 ```
-git clone https://github.com/praffn/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles && ./install.sh
+git clone https://github.com/praffn/dotfiles.git && cd dotfiles && ./install.sh
 ```

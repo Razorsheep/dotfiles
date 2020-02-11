@@ -3,15 +3,10 @@ brew "git"
 brew "openssl"
 brew "wget"
 brew "vim"
-brew "zsh"
 brew "tldr"
-brew "the_silver_searcher"
-brew "ripgrep"
 brew "bat"
 
-
 # development
-cask "iterm2"
 cask "visual-studio-code"
 cask "docker"
 
@@ -23,11 +18,11 @@ cask "google-chrome"
 cask "spotify"
 cask "slack"
 cask "spectacle"
-cask "1password"
-cask "alfred"
+cask "bitwarden"
 cask "dropbox"
+cask "authy"
+cask "sketch"
 
-# fonts
-tap "caskroom/fonts"
-cask "font-ibm-plex"
-cask "font-fira-code"
+# work specific
+tap shopify/shopify
+install themekit

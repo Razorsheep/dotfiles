@@ -63,31 +63,23 @@ ln_if () {
 # symlinks
 
 put_step "Setting up symbolic links"
-touch $HOME/.zsh-env
-ln_if $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
-ln_if $HOME/.dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
-ln_if $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
-ln_if $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
-ln_if $HOME/.dotfiles/tmux.conf.local $HOME/.tmux.conf.local
-
-mkdir -p "$HOME/Library/Application Support/Code/User"
-ln_if $HOME/.dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
-ln_if $HOME/.dotfiles/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
-
-put_success "Symlinks created"
+# ln_if ./git/gitignore_global $HOME/.gitignore_global
+ln_if ./dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
+ln_if ./dotfiles/zsh/zshrc $HOME/.zshrc
+put_success "Symbolic links created"
 
 # Install Xcode Command Line tools
 put_header "XCode Command Line Tools"
 
 if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
   test -d "${xpath}" && test -x "${xpath}" ; then
-  put_info "Xcode Command Line Tools are already installed...";
+  put_success "Xcode Command Line Tools are already installed...";
 else
   put_step "Installing Xcode Command Line Tools..."; echo;
   xcode-select --install
+  put_success "Xcode Command Line tools installed"
 fi
 
-put_success "Xcode Command Line tools installed"
 
 # Install Homebrew
 put_header "Homebrew"
@@ -121,16 +113,6 @@ else
   put_step "Installing oh-my-zsh..."
   git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh &> /dev/null
 fi
-
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-if [ -d "$ZSH_CUSTOM/themes/spaceship-prompt" ]; then
-  put_info "Spaceship ZSH theme already installed..."
-else
-  put_info "Installing Spaceship ZSH theme..."
-  git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" &> /dev/null
-  ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-fi
-
 
 # change shell to zsh if it isnt already
 TEST_CURRENT_SHELL=$(basename "$SHELL")
@@ -173,26 +155,6 @@ fi
 curl -o- -L https://yarnpkg.com/install.sh 2> /dev/null | bash &> /dev/null
 
 put_success "Yarn was successfully installed/updated!"
-
-# The Ultimate vimrc
-put_header "The Ultimate vimrc"
-put_info "https://github.com/amix/vimrc"
-
-if [ -d "$HOME/.vim_runtime" ]; then
-  put_info "The Ultimate vimrc is already installed... Updating..."
-  (cd $HOME/.vim_runtime && git pull --rebase) &> /dev/null
-  ln_if $HOME/.dotfiles/vim/my_configs.vim $HOME/.vim_runtime/my_configs.vim
-  put_success "The Ultimate vimrc was updated!"
-else
-  put_step "Installing The Ultimate vimrc..."
-  # get that good stuff
-  git clone --depth=1 https://github.com/amix/vimrc.git $HOME/.vim_runtime &> /dev/null
-  # link custom vimrc into my_configs.vim
-  ln -s $HOME/.dotfiles/vim/my_configs.vim $HOME/.vim_runtime/my_configs.vim
-  # install it
-  sh $HOME/.vim_runtime/install_awesome_vimrc.sh &> /dev/null
-  put_success "The Ultimate vimrc was successfully installed!"
-fi
 
 
 # macos stuff

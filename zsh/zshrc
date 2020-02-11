@@ -1,23 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# aliases
-source $HOME/.zsh-aliases
-
-# env
-source $HOME/.zsh-env
-
 # zsh theme
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
 
 # zsh plugins
-plugins=(
-  git
-  osx
-  z  
-)
+plugins=(git z docker-compose yarn osx)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zsh-aliases
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
