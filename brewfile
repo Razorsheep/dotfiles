@@ -5,6 +5,7 @@ brew "wget"
 brew "vim"
 brew "tldr"
 brew "bat"
+brew "tmux"
 
 # development
 cask "visual-studio-code"
@@ -24,5 +25,5 @@ cask "authy"
 cask "sketch"
 
 # work specific
-tap shopify/shopify
-install themekit
+tap "shopify/shopify"
+brew "themekit"

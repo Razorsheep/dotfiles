@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+BASEDIR=$(dirname "$0")
 FLAG_UPDATE_BREW=true
 FLAG_MACOS_PREF=true
 
@@ -56,16 +58,17 @@ put_header "Symbolic Links"
 # creates symbol link $1 -> $2 iff $2 doesnt exists
 ln_if () {
   if [ ! -f "$2" ]; then
-    ln -s "$1" "$2"
+    ln -sf "$1" "$2"
   fi
 }
 
 # symlinks
 
 put_step "Setting up symbolic links"
-# ln_if ./git/gitignore_global $HOME/.gitignore_global
-ln_if ./dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
-ln_if ./dotfiles/zsh/zshrc $HOME/.zshrc
+ln_if $BASEDIR/git/gitignore_global $HOME/.gitignore_global
+ln_if $BASEDIR/tmux/tmux.conf $HOME/.tmux.conf
+ln_if $BASEDIR/dotfiles/zsh/zsh-aliases $HOME/.zsh-aliases
+ln_if $BASEDIR/dotfiles/zsh/zshrc $HOME/.zshrc
 put_success "Symbolic links created"
 
 # Install Xcode Command Line tools
@@ -96,7 +99,7 @@ if $FLAG_UPDATE_BREW; then
   yes | brew update &> /dev/null
   yes | brew upgrade &> /dev/null
   put_step "Installing Homebrew packages...";
-  yes | brew bundle --file=brewfile &> /dev/null || true
+  yes | brew bundle --file=$BASEDIR/brewfile &> /dev/null || true
   put_success "Homebrew installed, updated and upgraded"
 else
   put_info "Skipping Homebrew update/upgrade...";
@@ -161,7 +164,7 @@ put_success "Yarn was successfully installed/updated!"
 put_header "macOS"
 if $FLAG_MACOS_PREF; then
   put_step "Updating macOS preferences and settings (this might ask for password)..."; echo;
-  source .macos
+  source $BASEDIR/.macos
   put_success "macOS settings updated"
 else
   put_info "Skipping updating macOS preferences..."
