@@ -1,0 +1,3 @@
+svgpb() {
+    pbpaste | svgo $* -i - -o - | pbcopy
+}

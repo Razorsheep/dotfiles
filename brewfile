@@ -6,6 +6,7 @@ brew "vim"
 brew "tldr"
 brew "bat"
 brew "tmux"
+brew "svgo"
 
 # development
 cask "visual-studio-code"
